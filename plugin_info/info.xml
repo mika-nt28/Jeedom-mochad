@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+    <id>mochad</id>
+    <name>Mochad - X10</name>
+    <description>Plugin pour gérer des équipements X10 via le deamon Mochad et une passer CM15</description>
+    <icon>fa fa-sitemap</icon>
+    <licence>AGPL</licence>
+    <author>Halbout Michael</author>
+    <installation>Vous devez avoir Mochad d'installer.</installation>
+    <require>2.0</require>
+    <category>automation protocol</category>
+    <allowRemote>1</allowRemote>
+	<hasDependency>1</hasDependency>
+    <hasOwnDeamon>1</hasOwnDeamon>
+</info>
+

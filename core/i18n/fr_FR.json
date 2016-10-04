@@ -1,0 +1,6 @@
+{
+    "plugins\/mochad\/plugin_info\/info.xml": {
+        "Plugin pour gérer des équipements X10 via le deamon Mochad et une passer CM15": "Plugin pour gérer des équipements X10 via le deamon Mochad et une passer CM15",
+        "Vous devez avoir Mochad d'installer.\n\tSi Jeedom mini\n\t    \"wget -q http:\/\/IP_DE_LA_MINI\/plugins\/mochad\/ressources\/install-mochad.sh | sudo bash\"\n\tSinon\n\t    \"wget -q http:\/\/127.0.0.1\/jeedom\/plugins\/mochad\/ressources\/install-mochad.sh | sudo bash\"": "Vous devez avoir Mochad d'installer.\n\tSi Jeedom mini\n\t    \"wget -q http:\/\/IP_DE_LA_MINI\/plugins\/mochad\/ressources\/install-mochad.sh | sudo bash\"\n\tSinon\n\t    \"wget -q http:\/\/127.0.0.1\/jeedom\/plugins\/mochad\/ressources\/install-mochad.sh | sudo bash\""
+    }
+}
