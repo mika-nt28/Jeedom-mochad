@@ -23,7 +23,7 @@ if (!isConnect()) {
 		<div class="form-group">
 			<label class="col-lg-2 control-label">Ajouter automatiquement les périphériques détectée</label>
 			<div class="col-lg-3">
-				<input type="checkbox" class="configKey bootstrapSwitch" data-label-text="{{Automatique}}" data-l1key="autoAddDevice"/>
+				<input type="checkbox" class="configKey" data-label-text="{{Automatique}}" data-l1key="autoAddDevice"/>
 			</div>
 		</div>
     </fieldset>
