@@ -18,7 +18,7 @@ echo 15 > /tmp/compilation_Mochad_in_progress
 cd mochad-0.1.16
 
 echo "Compiliing mochad..." 
-check_run ./configure 
+./configure 
 
 echo 30 > /tmp/compilation_Mochad_in_progress
 make
