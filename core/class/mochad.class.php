@@ -159,7 +159,7 @@ class mochad extends eqLogic {
 		$return['state'] = 'nok';
 		$return['progress_file'] = '/tmp/compilation_Mochad_in_progress';
 		if(file_exists('/etc/mochad/mochad_VERSION')){
-			if(exec("cat /etc/mochad/mochad_VERSION")=="v0.1.16")
+			if(exec("cat /etc/mochad/mochad_VERSION")=="v0.1.17")
 				$return['state'] = 'ok';
 		}
 		return $return;
