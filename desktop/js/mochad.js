@@ -38,51 +38,6 @@ $(function() {
 				break;
 			}
 	});
-	/*$('#table_cmd tbody').delegate('.cmd .cmdAttr[data-l1key=configuration][data-l2key=MochadCommande]', 'change', function() {
-		switch($(this).val())
-			{
-			case "on-off":
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('other');
-				break;
-			case "on":
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('other');
-				break;
-			case "off":
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('other');
-				break;
-			case "dim":
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('other');
-				break;
-			case "bright":
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('other');
-				break;
-			case "xdim":
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('slider');
-				break;
-			case "all_lights_on":
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('other');
-				break;
-			case "all_lights_off":
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('other');
-				break;
-			case "all_units_off":
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('other');
-				break;
-			default:
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=type]').val('action');
-				$(this).closest('.cmd').find('.cmdAttr[data-l1key=subType]').val('other');
-				break;
-			};
-		}); */
 	$('#table_cmd tbody').delegate('.cmd .cmdAttr[data-l1key=configuration][data-l2key=MochadCommandeType]', 'change', function() {
 
 		if ($(this).val() == "pl")
@@ -184,12 +139,7 @@ function addCmdToTable(_cmd) {
 			.append($('<span>')
 				.append($('<label>')
 					.text('{{Afficher}}'))
-				.append($('<input type="checkbox" class="cmdAttr " data-size="mini" data-label-text="{{Afficher}}" data-l1key="isVisible" checked/>')))
-			.append($('</br>'))
-			.append($('<span>')
-				.append($('<label>')
-					.text('{{Evénement}}'))
-				.append($('<input type="checkbox" class="cmdAttr" data-size="mini" data-label-text="{{Evénement}}" data-l1key="eventOnly" checked/>'))))
+				.append($('<input type="checkbox" class="cmdAttr " data-size="mini" data-label-text="{{Afficher}}" data-l1key="isVisible" checked/>'))))
 		.append($('<div style="display : inline-block;">')
 			.append($('<input class="tooltips cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="minValue" placeholder="{{Min}}" title="{{Min}}" style="width : 40%;display : inline-block;">'))
 			.append($('<input class="tooltips cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="maxValue" placeholder="{{Max}}" title="{{Max}}" style="width : 40%;display : inline-block;">'))));
