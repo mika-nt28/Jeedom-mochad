@@ -4,7 +4,7 @@
 	"description" : "Plugin pour gérer des équipements X10 via le deamon Mochad et une passer CM15",
 	"licence" : "AGPL",
 	"author" : "Halbout Michael",
-	"require" : "3.0",
+	"require" : "2.4",
 	"category" : "automation protocol",
 	"hasOwnDeamon" : true,
 	"hasDependency" : true
