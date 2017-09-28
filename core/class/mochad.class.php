@@ -34,7 +34,7 @@ class mochad extends eqLogic {
 		fclose($socket); 
 	}
 	public static function X10Analyse($Message) {
-		$Ligne=split('&',$Message);
+		$Ligne=explode('&',$Message);
 		$Etat=substr($Ligne[1],strrpos($Ligne[1],"Func: ")+6);	
 		if ($Etat=="On")
 			$EtatModule= 1;
@@ -56,7 +56,7 @@ class mochad extends eqLogic {
 	}
 	public static function X10SecurityAnalyse($Message) {
 		$Adresse=substr($Message,strrpos($Message,"Addr: ")+6,8);
-		$Fonction=split('_',substr($Message,strrpos($Message,"Func: ")+6));
+		$Fonction=explode('_',substr($Message,strrpos($Message,"Func: ")+6));
 		if ($Fonction[1]=="alert")
 			$Valeur= 1;
 		elseif ($Fonction[1]=="normal")
@@ -241,8 +241,8 @@ class mochadCmd extends cmd {
 		$port=config::byKey('mochadPort', 'mochad');
 		$Equipement = mochad::byId($this->getEqLogic_id(), 'mochad');
 		$State=$Equipement->getCmd('info','Etat_'.$Equipement->getId());
-		$codeMaison=split('-',$Equipement->getLogicalId())[0];
-		$codeEquipement=split('-',$Equipement->getLogicalId())[1];
+		$codeMaison=explode('-',$Equipement->getLogicalId())[0];
+		$codeEquipement=explode('-',$Equipement->getLogicalId())[1];
 		//exemple de message : pl a all_lights_off
 		switch ($this->getType()) {
 			case 'action' :
@@ -340,15 +340,15 @@ class mochadCmd extends cmd {
 		fclose($socket); 
 		log::add('mochad', 'debug', 'Recus : '.$reponse);
 		$valeur=0;
-		$reponse=split("\n",$reponse);
+		$reponse=explode("\n",$reponse);
 		foreach ($reponse as $Line){
 			if (strrpos($Line,"House ".$codeMaison)>0){
 				log::add('mochad', 'debug', 'Table de valeur pour House '.$codeMaison.': '.$Line);
 				$Values=substr($Line,strrpos($Line,"House ".$codeMaison)+9);
 				log::add('mochad', 'debug', 'Table de valeur pour House '.$codeMaison.': '.$Values);
-				$Valuetable=split(',',$Values);
+				$Valuetable=explode(',',$Values);
 				foreach ($Valuetable as $ValueDevice){
-					$ValueDevice=split('=',$ValueDevice);
+					$ValueDevice=explode('=',$ValueDevice);
 					if ($ValueDevice[0]==$codeEquipement){
 						$valeur=$ValueDevice[1];
 						log::add('mochad', 'debug', 'Valeur de l\'équipement '.$codeMaison.$codeEquipement.': '.$valeur);
