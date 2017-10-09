@@ -257,15 +257,16 @@ class mochadCmd extends cmd {
 						$ActionValue = $_options['message'];
 					break;
 				}
+				$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison;
 				switch ($this->getConfiguration('MochadCommande')){
 					case 'on-off':	
 						$ActionValue=mochadCmd::ReadStatus($address,$port,$codeMaison,$codeEquipement);
 						if ($ActionValue==1){
 							$ActionValue=0;
-							$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.$codeEquipement.' off';	
+							$message.= $codeEquipement.' off';	
 						}else{
 							$ActionValue=1;
-							$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.$codeEquipement.' on';	
+							$message .= $codeEquipement.' on';	
 						}
 						if (is_object($State)){
 							$State->setCollectDate('');
@@ -275,7 +276,7 @@ class mochadCmd extends cmd {
 					break;
 					case 'on':	
 						$ActionValue=1;
-						$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.$codeEquipement.' on';
+						$message.= $codeEquipement.' on';
 						if (is_object($State)){
 							$State->setCollectDate('');
 							$State->event($ActionValue);
@@ -284,7 +285,7 @@ class mochadCmd extends cmd {
 					break;
 					case 'off':	
 						$ActionValue=0;
-						$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.$codeEquipement.' off';	
+						$message.= $codeEquipement.' off';	
 						if (is_object($State)){
 							$State->setCollectDate('');
 							$State->event($ActionValue);
@@ -292,22 +293,22 @@ class mochadCmd extends cmd {
 						}
 					break;
 					case 'dim'://0-31
-						$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.$codeEquipement.' '.$this->getConfiguration('MochadCommande').' '.$ActionValue;	
+						$message.= $codeEquipement.' '.$this->getConfiguration('MochadCommande').' '.$ActionValue;	
 					break;
 					case 'bright'://0-31
-						$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.$codeEquipement.' '.$this->getConfiguration('MochadCommande').' '.$ActionValue;
+						$message.= $codeEquipement.' '.$this->getConfiguration('MochadCommande').' '.$ActionValue;
 					break;
 					case 'xdim'://0-255	
-						$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.$codeEquipement.' '.$this->getConfiguration('MochadCommande').' '.round($ActionValue*255/100);
+						$message.= $codeEquipement.' '.$this->getConfiguration('MochadCommande').' '.round($ActionValue*255/100);
 					break;
-						case 'all_lights_on':	
-					$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.' '.$this->getConfiguration('MochadCommande');	
+					case 'all_lights_on':	
+						$message.= ' '.$this->getConfiguration('MochadCommande');	
 					break;
 					case 'all_lights_off':
-						$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.' '.$this->getConfiguration('MochadCommande');		
+						$message.= ' '.$this->getConfiguration('MochadCommande');		
 					break;
 					case 'all_units_off':
-						$message = $this->getConfiguration('MochadCommandeType').' '.$codeMaison.' '.$this->getConfiguration('MochadCommande');		
+						$message.= ' '.$this->getConfiguration('MochadCommande');		
 					break;
 				}
 				# On ouvre le FLUX sur le CM15
