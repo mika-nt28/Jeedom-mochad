@@ -1,7 +1,7 @@
 {
 	"id" : "mochad",
 	"name" : "Mochad - X10",
-	"description" : "Plugin pour gérer des équipements X10 via le deamon Mochad et une passer CM15",
+	"description" : "Plugin pour gérer des équipements X10 via le démon Mochad et une interface informatique CM15",
 	"licence" : "AGPL",
 	"author" : "Halbout Michael",
 	"require" : "2.4",
