@@ -23,6 +23,7 @@ $eqLogics = eqLogic::byType('mochad');
     </div>
 	<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
         <legend>{{Mes Equipements}}</legend>
+		<input class="form-control" placeholder="{{Rechercher}}" style="margin-bottom:4px;" id="in_searchEqlogic" />
 		<div class="eqLogicThumbnailContainer">
 			<div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; " >
 				<center>
