@@ -16,7 +16,7 @@ Il est possible d'utilisé un mochad sur venant d'un autre machine
 Configuration d'un équpement
 ====
 
-![introduction01](../images/mochad_screenshot_Configuration.phg)
+![introduction01](../images/mochad_screenshot_Configuration.png)
 
 
 ![introduction04](../images/mochad_screenshot_ConfigurationDevice.png)
