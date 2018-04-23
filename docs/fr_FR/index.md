@@ -1,11 +1,6 @@
-= clientSIP
+Description
+===
+Ce plugin permet de gerer vos equipements x10 grace a votre CM15 pi CM19
 
-== Description
-
-Ce plugin a pour but de conneter jeedom a notre reseau Sip
-
-== Installation et configuration
-
-== Paramétrage des equipements et des commandes
-
-== FAQ
+Installation et configuration
+===
