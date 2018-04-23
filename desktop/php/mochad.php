@@ -14,9 +14,9 @@ $eqLogics = eqLogic::byType('mochad');
                 <a class="btn btn-default eqLogicAction" style="width : 100%;margin-top : 5px;margin-bottom: 5px;" data-action="add"><i class="fa fa-plus-circle"></i> {{Ajouter un équipement}}</a>
                 <li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%"/></li>
                 <?php
-                foreach (eqLogic::byType('mochad') as $eqLogic) {
-					echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"><a>' . $eqLogic->getHumanName(true) . '</a></li>';
-                }
+			foreach (eqLogic::byType('mochad') as $eqLogic) {
+						echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"><a>' . $eqLogic->getHumanName(true) . '</a></li>';
+			}
                 ?>
             </ul>
         </div>
@@ -34,21 +34,16 @@ $eqLogics = eqLogic::byType('mochad');
 				</span>
 			</div>
 			<?php
-			if (count($eqLogics) == 0) {
-				echo "<br/><br/><br/><center><span style='color:#767676;font-size:1.2em;font-weight: bold;'>{{Vous n'avez pas encore d'équipement, cliquez sur Ajouter pour commencer}}</span></center>";
-			} else {
-			?>
-				<?php
 				foreach ($eqLogics as $eqLogic) {
-					echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >';
+					$opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
+					echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
 					echo "<center>";
-					echo '<img src="plugins/mochad/doc/images/mochad_icon.png" height="105" width="95" />';
+					echo '<img src="plugins/mochad/plugin_info/mochad_icon.png" height="105" width="95" />';
 					echo "</center>";
-					echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
+					echo '<span class="name" style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
 					echo '</div>';
 				}
-				?>
-			<?php } ?>
+			?>				
 		</div>
     </div>
     
