@@ -8,7 +8,5 @@
 	"hasOwnDeamon" : true,
 	"hasDependency" : true,
 	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
-	"issue" : "https://github.com/mika-nt28/Jeedom-mochad/issues",
- 	"changelog" : "https://github.com/mika-nt28/Jeedom-mochad/commits/master",
  	"documentation" : "https://mika-nt28.github.io/Jeedom-mochad/"
 }
