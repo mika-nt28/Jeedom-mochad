@@ -7,7 +7,7 @@
 	"category" : "automation protocol",
 	"hasOwnDeamon" : true,
 	"hasDependency" : true,
-	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
- 	"documentation" : "https://mika-nt28.github.io/Jeedom-mochad/",
-	"changelog" : "https://mika-nt28.github.io/Jeedom-mochad/"
+	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile","v4"],
+ 	"documentation" : "https://mika-nt28.github.io/Documentations/mochad/",
+	"changelog" : "https://mika-nt28.github.io/Documentations/mochad/changelog"
 }
