@@ -42,7 +42,7 @@ class mochad extends eqLogic {
 			$EtatModule= 0;
 		log::add('mochad', 'debug', 'Etat mémorisé '.$EtatModule);
 		$Unite=substr(substr($Ligne[0],strrpos($Ligne[0],"HouseUnit: ")+11),0,1);
-		$Code=substr(substr($Ligne[0],strrpos($Ligne[0],"HouseUnit: ")+11),1,1);
+		$Code=substr(substr($Ligne[0],strrpos($Ligne[0],"HouseUnit: ")+11),1);
 		log::add('mochad', 'debug', 'Recherche du module '.$Unite.$Code);
 		$Equipement = mochad::byLogicalId($Unite.'-'.$Code, 'mochad');
 		if (is_object($Equipement)) {
